@@ -1,0 +1,24 @@
+//String
+ValueDomain MyString : String[1..MAX]
+
+//Integer
+ValueDomain MyInteger : Integer[MIN..MAX]
+
+//Boolean
+ValueDomain MyBoolean : Boolean
+
+//Value
+ValueDomain MyValue : OneOf<MyString, MyInteger, MyBoolean ,MyArray, MyObject>
+
+//Object
+ValueDomain MyObject : List<Pair>
+
+//ValuePair
+ValueDomain Pair : Struct {
+    key : MyString,
+    value : MyValue
+}
+
+//Array
+ValueDomain MyArray : List<MyObject>
+
